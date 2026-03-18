@@ -1,43 +1,46 @@
 const app = document.getElementById('app');
+let recipesCache = null;
 
 async function fetchRecipes() {
+    if (recipesCache) return recipesCache;
     const response = await fetch('recipes.json');
-    return await response.json();
+    recipesCache = await response.json();
+    return recipesCache;
 }
 
 async function renderList() {
-    const recipes = await fetchRecipes();
-    app.innerHTML = `
-        <div class="recipe-list">
-            ${recipes.map(recipe => `
-                <div class="recipe-card" onclick="location.hash='#/recipe/${recipe.slug}'">
-                    <h2>${recipe.title}</h2>
-                    <p>${recipe.yield}</p>
-                    <div class="tags">
-                        ${recipe.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+    app.innerHTML = '<div class="loading">Loading recipes...</div>';
+    try {
+        const recipes = await fetchRecipes();
+        app.innerHTML = `
+            <div class="recipe-list">
+                ${recipes.map(recipe => `
+                    <div class="recipe-card" onclick="location.hash='#/recipe/${recipe.slug}'">
+                        <h2>${recipe.title}</h2>
+                        <p>${recipe.yield}</p>
+                        <div class="tags">
+                            ${(recipe.tags || []).map(tag => `<span class="tag">${tag}</span>`).join('')}
+                        </div>
                     </div>
-                </div>
-            `).join('')}
-        </div>
-    `;
+                `).join('')}
+            </div>
+        `;
+    } catch (error) {
+        app.innerHTML = '<div class="error">Failed to load recipes.</div>';
+    }
 }
 
 async function renderRecipe(slug) {
-    app.innerHTML = '<div class="loading">Loading recipe...</div>';
-    
     try {
-        const response = await fetch(`recipes/${slug}.md`);
-        if (!response.ok) throw new Error('Recipe not found');
+        const recipes = await fetchRecipes();
+        const recipe = recipes.find(r => r.slug === slug);
         
-        const text = await response.text();
-        
-        // Remove frontmatter
-        const content = text.replace(/^---[\s\S]*?---/, '');
+        if (!recipe) throw new Error('Recipe not found');
         
         app.innerHTML = `
             <div class="container">
                 <div class="recipe-detail">
-                    ${marked.parse(content)}
+                    ${marked.parse(recipe.content)}
                     <br>
                     <a href="#/" class="back-link">← Back to Recipes</a>
                 </div>
@@ -60,7 +63,6 @@ async function renderRecipe(slug) {
 
 async function router() {
     const hash = location.hash;
-    
     if (hash.startsWith('#/recipe/')) {
         const slug = hash.replace('#/recipe/', '');
         await renderRecipe(slug);
