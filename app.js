@@ -23,21 +23,39 @@ async function renderList() {
 }
 
 async function renderRecipe(slug) {
-    const response = await fetch(`recipes/${slug}.md`);
-    const text = await response.text();
+    app.innerHTML = '<div class="loading">Loading recipe...</div>';
     
-    // Remove frontmatter
-    const content = text.replace(/^---[\s\S]*?---/, '');
-    
-    app.innerHTML = `
-        <div class="container">
-            <div class="recipe-detail">
-                ${marked.parse(content)}
-                <br>
-                <a href="#/" class="back-link">← Back to Recipes</a>
+    try {
+        const response = await fetch(`recipes/${slug}.md`);
+        if (!response.ok) throw new Error('Recipe not found');
+        
+        const text = await response.text();
+        
+        // Remove frontmatter
+        const content = text.replace(/^---[\s\S]*?---/, '');
+        
+        app.innerHTML = `
+            <div class="container">
+                <div class="recipe-detail">
+                    ${marked.parse(content)}
+                    <br>
+                    <a href="#/" class="back-link">← Back to Recipes</a>
+                </div>
             </div>
-        </div>
-    `;
+        `;
+        window.scrollTo(0, 0);
+    } catch (error) {
+        app.innerHTML = `
+            <div class="container">
+                <div class="recipe-detail">
+                    <h2>Oops!</h2>
+                    <p>Sorry, we couldn't find that recipe.</p>
+                    <br>
+                    <a href="#/" class="back-link">← Back to Recipes</a>
+                </div>
+            </div>
+        `;
+    }
 }
 
 async function router() {
