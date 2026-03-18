@@ -1,0 +1,14 @@
+{
+  "name": "basta-recipes",
+  "version": "1.0.0",
+  "description": "A simple recipe book website",
+  "main": "index.html",
+  "scripts": {
+    "build": "node scripts/build-index.js",
+    "dev": "npm run build && npx servor . --reload"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.1",
+    "marked": "^12.0.0"
+  }
+}

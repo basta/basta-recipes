@@ -1,0 +1,97 @@
+[
+  {
+    "filename": "north-african-harissa-chickpea-skillet.md",
+    "slug": "north-african-harissa-chickpea-skillet",
+    "title": "North African Harissa & Chickpea Skillet",
+    "yield": "4 servings",
+    "equipment": [
+      "1 large, deep skillet with a lid"
+    ],
+    "tags": [
+      "north-african",
+      "harissa",
+      "chicken",
+      "chickpeas",
+      "skillet",
+      "spicy"
+    ],
+    "ingredients": [
+      "800g chicken breast, cut into large chunks",
+      "2 cans (400g each) chickpeas, rinsed and drained",
+      "1 can (400g) crushed tomatoes",
+      "3 tbsp harissa paste",
+      "150g fresh spinach",
+      "Salt, pepper, and a squeeze of lemon juice"
+    ],
+    "instructions": [
+      "Heat the skillet over medium-high heat. Season the chicken chunks with salt and pepper, then sear them until browned (about 5 minutes).",
+      "Lower the heat to medium. Add the harissa paste and stir to coat the chicken.",
+      "Pour in the crushed tomatoes and the chickpeas. Stir well.",
+      "Cover and simmer for 15 minutes.",
+      "Remove from heat, stir in the fresh spinach until it wilts, and finish with a squeeze of fresh lemon juice."
+    ]
+  },
+  {
+    "filename": "one-pot-thai-peanut-chicken-curry.md",
+    "slug": "one-pot-thai-peanut-chicken-curry",
+    "title": "One-Pot Thai Peanut Chicken Curry",
+    "yield": "4-5 servings",
+    "equipment": [
+      "1 large pot or Dutch oven"
+    ],
+    "tags": [
+      "thai",
+      "curry",
+      "chicken",
+      "peanut",
+      "one-pot",
+      "low-fat"
+    ],
+    "ingredients": [
+      "1 kg chicken breast, diced",
+      "1 can (400ml) light coconut milk",
+      "3-4 tbsp Thai red curry paste",
+      "4 tbsp powdered peanut butter (like PB2)",
+      "1 large bag of frozen stir-fry vegetables (broccoli, carrots, snap peas)",
+      "1 tbsp fish sauce (optional, but adds great umami)"
+    ],
+    "instructions": [
+      "Place the pot over medium heat. Sauté the chicken until lightly browned on the outside.",
+      "Add the red curry paste and stir for 1 minute until fragrant.",
+      "Pour in the light coconut milk, powdered peanut butter, and fish sauce. Whisk until smooth.",
+      "Dump in the frozen vegetables, bring to a gentle bubble, and let it simmer uncovered for 10-15 minutes until the sauce thickens and the chicken is cooked through."
+    ]
+  },
+  {
+    "filename": "spicy-korean-egg-roll-in-a-bowl.md",
+    "slug": "spicy-korean-egg-roll-in-a-bowl",
+    "title": "Spicy Korean 'Egg Roll in a Bowl'",
+    "yield": "4-5 huge servings",
+    "equipment": [
+      "1 large wok or deep skillet"
+    ],
+    "tags": [
+      "korean",
+      "low-calorie",
+      "volume-eating",
+      "turkey",
+      "pork",
+      "cabbage"
+    ],
+    "ingredients": [
+      "1 kg lean ground turkey or lean ground pork (5% fat)",
+      "1 massive head of cabbage, shredded (or 2 large bags of pre-shredded coleslaw mix)",
+      "3 tbsp soy sauce (or tamari)",
+      "2 tbsp gochujang (adjust for spice preference)",
+      "1 tbsp sesame oil",
+      "Fresh ginger and garlic (minced)",
+      "Chopped green onions"
+    ],
+    "instructions": [
+      "Heat the wok over high heat. Add the meat, garlic, and ginger, cooking until the meat is browned.",
+      "Stir in the gochujang and soy sauce, mixing until the meat is coated.",
+      "Dump all the shredded cabbage into the wok. It will look like too much, but keep tossing it with the meat. It will wilt down in about 5 to 7 minutes.",
+      "Remove from heat, stir in the sesame oil, and top heavily with green onions."
+    ]
+  }
+]
